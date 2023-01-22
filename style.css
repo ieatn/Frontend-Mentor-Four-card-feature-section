@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --ff: 'Poppins'
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: var(--ff);
+}
+main {
+    /* need 3 boxes in 1 row, add up the width+margin for each box to fit inside this width */
+    max-width: 1140px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 200;
+}
+h1 span {
+    font-size: 2rem;
+    font-weight: 600;
+    /* make 2nd line go underneath 1st */
+    display: block;
+} 
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+p {
+    font-size: 1.5rem;
+    color: var(--Grayish-Blue);
+    margin: 15px 0 30px;
+}
+header {
+    text-align: center;
+    margin: 50px auto;
+}
+.card {
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    margin: 15px;
+}
+/* line on top */
+.card::after {
+    content: '';
+    background-color: purple;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.card-blue::after {
+    content: '';
+    background-color: var(--Blue);
+}
+.card-red::after {
+    content: '';
+    background-color: var(--Red);
+}
+.card-yellow::after {
+    content: '';
+    background-color: var(--Orange);
+}
+.card-cyan::after {
+    content: '';
+    background-color: var(--Cyan);
+}
+
+.card img {
+    display: block;
+    margin-left: auto;
+}
+.push-down {
+    transform: translateY(50%);
+}
+
+@media (max-width: 775px) {
+    .box-push {
+        transform: translateY(0);
+    }
+}
